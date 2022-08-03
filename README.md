@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# Food Management System - WeFeed
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+|  Group Members        |      Github username  |
+|  Sujan Chhetri Poudel |         Sufo10        |
+|  Prazol Basnet        |         prazol09      |
+|  Isha Shrestha        |         isashrestha   |
 
-## Available Scripts
+## Project Description
 
-In the project directory, you can run:
+There are several events like wedding parties and worship that are frequently conducted in our society. Oftentimes, at the end of the event, there is excess food that mostly goes to waste. While some people are not getting enough to eat, somewhere, good food is going to waste. Our application will be a platform where people who have food - will post the details about it in the system - and those seeking it will be able to contact them. Further details can be sorted out by the user themselves after the contact, depending upon whether they are volunteers who deliver food to the needy or the needy themselves. Other types of food - any kind of good food - can be posted in the system too.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Phase 1 features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- log in (by member)
+- register (by normal user)
+- post food details (by registered members)
+- edit food details (by the creator of the post)
+- view food details including contact information of post creator (by registered members)
 
-### `npm test`
+### Phase 2 features (Future updates)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Donation (from anybody)
+- Other features will be planned and updated soon...
