@@ -1,9 +1,9 @@
 # Food Management System - WeFeed
 
-|  Group Members        |      Github username  |
-|  Sujan Chhetri Poudel |         Sufo10        |
-|  Prazol Basnet        |         prazol09      |
-|  Isha Shrestha        |         isashrestha   |
+- Group Members : Github username  
+-  Sujan Chhetri Poudel : Sufo10        
+-  Prazol Basnet        : prazol09      
+-  Isha Shrestha        : isashrestha   
 
 ## Project Description
 
