@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 // name/logo of the organization
 export const H1 = styled.h1`
@@ -8,8 +9,12 @@ export const H1 = styled.h1`
   flex: 90%;
 `;
 
+export const NavLink = styled(Link)`
+  text-decoration: none;
+`;
 // nav bar buttons
 export const Button = styled.button`
+  text-decoration: none;
   /* padding: 0.1rem 3rem; */
   background-color: white;
   border: none;

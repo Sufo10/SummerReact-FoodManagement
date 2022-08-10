@@ -1,27 +1,25 @@
-<<<<<<< HEAD
+/* eslint-disable no-unused-vars */
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavigationBar';
 import MainContainerC from './components/Body';
-import { AppContainer } from './styled/App.styles';
-// import { Heding } from './styled-components/Navigation.style';
-=======
-/* eslint-disable no-unused-vars */
-import AppContainers from './styled/App.styled';
+import AppContainer from './styled/App.styled';
 import Forms from './components/index.components';
 
 const { Login, Register } = Forms;
->>>>>>> 830b12df08e63ab0fbf3a9ec207e0f2bd21d84a7
 
 function App() {
   return (
-    <AppContainers>
-<<<<<<< HEAD
+    <BrowserRouter>
       <NavBar />
-      <MainContainerC></MainContainerC>
-=======
-      <Login />
-      {/* <Register /> */}
->>>>>>> 830b12df08e63ab0fbf3a9ec207e0f2bd21d84a7
-    </AppContainers>
+      <AppContainer>
+        <Routes>
+          {/* <Route path='/home' element={<Login/>}/> */}
+          <Route path='/food' element={<MainContainerC />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+      </AppContainer>
+    </BrowserRouter>
   );
 }
 
