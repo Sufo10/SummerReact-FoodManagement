@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { OutNav, Nav, H1, Button } from '../styled/Navigation.style';
+import { OutNav, Nav, H1, Button, NavLink } from '../styled/Navigation.style';
 // ex: style for heading imported
 // import { Heding } from '../styled-components/Navigation.style'
 
@@ -9,11 +7,21 @@ const NavBar = () => {
   return (
     <OutNav>
       <Nav>
-        <H1>weFEED</H1>
-        <Button>Home</Button>
-        <Button>Food</Button>
-        <Button>Login</Button>
-        <Button>Register</Button>
+        <H1>
+          <NavLink to='/'>weFEED</NavLink>
+        </H1>
+        <Button>
+          <NavLink to='/'>Home</NavLink>
+        </Button>
+        <Button>
+          <NavLink to='/food'>Food</NavLink>
+        </Button>
+        <Button>
+          <NavLink to='/login'>Login</NavLink>
+        </Button>
+        <Button>
+          <NavLink to='/register'>Register</NavLink>
+        </Button>
       </Nav>
     </OutNav>
   );
