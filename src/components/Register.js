@@ -1,38 +1,62 @@
-import styled from 'styled-components';
-import FormComponents from '../styled/Form.styled';
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-unused-vars */
+import { useState } from 'react';
+import RegisterFormComponents from '../styled/Register.styled';
 
-const { CommonContainer, FormContainer, Heading2, Input, Button, P, A } =
-  FormComponents;
-
-const RFormContainer = styled(FormContainer)`
-  margin-top: 25px;
-`;
-
-const H2 = styled(Heading2)`
-  top: 5px;
-`;
-
-const Paragraph = styled(P)`
-  bottom: 2%;
-`;
-
-const Btn = styled(Button)`
-  margin-top: 10px;
-`;
+const {
+  CommonContainer,
+  H2,
+  RFormContainer,
+  Input,
+  Message,
+  Btn,
+  Paragraph,
+  A,
+} = RegisterFormComponents;
 
 function Register() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [conPass, setConPass] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    password === conPass
+      ? setMessage('')
+      : setMessage('Confirm password must be same as password');
+  };
+
   return (
     <CommonContainer>
       <H2>Register in WeFeed</H2>
-      <RFormContainer>
-        <Input placeholder='Name' type='text' />
-        <Input placeholder='Email' type='email' />
-        <Input placeholder='Password' type='password' />
-        <Input placeholder='Confirm Password' type='password' />
+      <RFormContainer onSubmit={handleSubmit}>
+        <Input
+          placeholder='Name'
+          type='text'
+          onChange={e => setName(e.target.value)}
+        />
+        <Input
+          placeholder='Email'
+          type='email'
+          onChange={e => setEmail(e.target.value)}
+        />
+        <Input
+          placeholder='Password'
+          type='password'
+          onChange={e => setPassword(e.target.value)}
+        />
+        <Input
+          placeholder='Confirm Password'
+          type='password'
+          onChange={e => setConPass(e.target.value)}
+        />
+        <Message>{message}</Message>
         <Btn>Register</Btn>
       </RFormContainer>
       <Paragraph>
-        Already Registered! <A href='#'>Log In!</A>
+        Already Registered! <A to='/login'>Log In!</A>
       </Paragraph>
     </CommonContainer>
   );

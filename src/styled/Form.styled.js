@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const CommonContainer = styled.div`
@@ -62,7 +63,7 @@ const P = styled.p`
   bottom: 10%;
 `;
 
-const A = styled.a`
+const A = styled(Link)`
   color: #1d1d1d;
 
   &:hover {
