@@ -2,14 +2,13 @@ const Joi = require('joi');
 
 const userSchema = {
   registerUser: Joi.object({
-    name: Joi.string().required(),
+    name: Joi.string().min(3).required(),
     email: Joi.string().email().required(),
-    phone: Joi.string().required(),
-    password: Joi.string().alphanum().required(),
+    password: Joi.string().min(8).alphanum().required(),
   }),
   loginUser: Joi.object({
     email: Joi.string().email().required(),
-    password: Joi.string().alphanum().required(),
+    password: Joi.string().min(8).alphanum().required(),
   }),
 };
 
