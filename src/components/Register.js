@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
-/* eslint-disable no-unused-vars */
 import { useState } from 'react';
+import useRegister from '../customHooks/useRegister';
 import RegisterFormComponents from '../styled/Register.styled';
 
 const {
@@ -12,6 +12,7 @@ const {
   Btn,
   Paragraph,
   A,
+  Error,
 } = RegisterFormComponents;
 
 function Register() {
@@ -20,12 +21,25 @@ function Register() {
   const [password, setPassword] = useState('');
   const [conPass, setConPass] = useState('');
   const [message, setMessage] = useState('');
+  const { register, error } = useRegister();
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     password === conPass
       ? setMessage('')
       : setMessage('Confirm password must be same as password');
+
+    const user = { name, email, password };
+    await register(user);
+  };
+
+  const check = () => {
+    if (name.length >= 2) {
+      document.querySelector('#phone').innerHTML = '';
+    }
+    if (password.length >= 7) {
+      document.querySelector('#password').innerHTML = '';
+    }
   };
 
   return (
@@ -34,19 +48,30 @@ function Register() {
       <RFormContainer onSubmit={handleSubmit}>
         <Input
           placeholder='Name'
+          value={name}
           type='text'
-          onChange={e => setName(e.target.value)}
+          onChange={e => {
+            setName(e.target.value);
+            check();
+          }}
         />
+        <Error>{error.password}</Error>
         <Input
           placeholder='Email'
+          value={email}
           type='email'
           onChange={e => setEmail(e.target.value)}
         />
         <Input
           placeholder='Password'
+          value={password}
           type='password'
-          onChange={e => setPassword(e.target.value)}
+          onChange={e => {
+            setPassword(e.target.value);
+            check();
+          }}
         />
+        <Error>{error.password}</Error>
         <Input
           placeholder='Confirm Password'
           type='password'

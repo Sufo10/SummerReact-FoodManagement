@@ -28,6 +28,14 @@ const Message = styled.p`
   margin-top: 2px;
 `;
 
+const Error = styled.div`
+  align-items: center;
+  font-size: 0.75em;
+  color: red;
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+`;
+
 export default {
   CommonContainer,
   RFormContainer,
@@ -37,4 +45,5 @@ export default {
   Message,
   Input,
   A,
+  Error,
 };
