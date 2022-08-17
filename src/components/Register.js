@@ -12,6 +12,7 @@ const {
   Btn,
   Paragraph,
   A,
+  RegisterWrapper,
 } = RegisterFormComponents;
 
 function Register() {
@@ -29,36 +30,38 @@ function Register() {
   };
 
   return (
-    <CommonContainer>
-      <H2>Register in WeFeed</H2>
-      <RFormContainer onSubmit={handleSubmit}>
-        <Input
-          placeholder='Name'
-          type='text'
-          onChange={e => setName(e.target.value)}
-        />
-        <Input
-          placeholder='Email'
-          type='email'
-          onChange={e => setEmail(e.target.value)}
-        />
-        <Input
-          placeholder='Password'
-          type='password'
-          onChange={e => setPassword(e.target.value)}
-        />
-        <Input
-          placeholder='Confirm Password'
-          type='password'
-          onChange={e => setConPass(e.target.value)}
-        />
-        <Message>{message}</Message>
-        <Btn>Register</Btn>
-      </RFormContainer>
-      <Paragraph>
-        Already Registered! <A to='/login'>Log In!</A>
-      </Paragraph>
-    </CommonContainer>
+    <RegisterWrapper>
+      <CommonContainer>
+        <H2>Register in WeFeed</H2>
+        <RFormContainer onSubmit={handleSubmit}>
+          <Input
+            placeholder='Name'
+            type='text'
+            onChange={e => setName(e.target.value)}
+          />
+          <Input
+            placeholder='Email'
+            type='email'
+            onChange={e => setEmail(e.target.value)}
+          />
+          <Input
+            placeholder='Password'
+            type='password'
+            onChange={e => setPassword(e.target.value)}
+          />
+          <Input
+            placeholder='Confirm Password'
+            type='password'
+            onChange={e => setConPass(e.target.value)}
+          />
+          <Message>{message}</Message>
+          <Btn>Register</Btn>
+        </RFormContainer>
+        <Paragraph>
+          Already Registered! <A to='/login'>Log In!</A>
+        </Paragraph>
+      </CommonContainer>
+    </RegisterWrapper>
   );
 }
 

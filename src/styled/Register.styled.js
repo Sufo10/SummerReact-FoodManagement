@@ -28,6 +28,15 @@ const Message = styled.p`
   margin-top: 2px;
 `;
 
+const RegisterWrapper = styled.div`
+  margin: 0;
+  background-color: lightgray;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 export default {
   CommonContainer,
   RFormContainer,
@@ -37,4 +46,5 @@ export default {
   Message,
   Input,
   A,
+  RegisterWrapper,
 };

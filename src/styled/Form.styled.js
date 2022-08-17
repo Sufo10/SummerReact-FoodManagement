@@ -15,6 +15,15 @@ const CommonContainer = styled.div`
   font-family: 'Poppins', sans-serif;
   border-radius: 10px;
 `;
+const LoginWrapper = styled.div`
+  margin: 0;
+  background-color: lightgray;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 const FormContainer = styled.form`
   width: 70%;
@@ -81,4 +90,5 @@ export default {
   Button,
   P,
   A,
+  LoginWrapper,
 };
