@@ -9,6 +9,15 @@ export const MainContainer = styled.div`
   /* border: solid; */
   padding: 10px;
 `;
+export const MainContainerWrapper = styled.div`
+  margin: 0;
+  background-color: lightgray;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const PostContainer = styled.div`
   /* display: flex; */
