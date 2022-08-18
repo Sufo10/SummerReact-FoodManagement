@@ -11,7 +11,9 @@ export const H1 = styled.h1`
 
 export const NavLink = styled(Link)`
   text-decoration: none;
+  color: black;
 `;
+
 // nav bar buttons
 export const Button = styled.button`
   text-decoration: none;
@@ -42,8 +44,10 @@ export const OutNav = styled.div`
   display: flex;
   background-color: white;
   width: 100%;
-  /* height: 30px; */
-  margin: 0px;
+  /* height: auto; */
+  margin: auto;
   padding: 0px;
   overflow: auto;
+  position: fixed;
+  z-index: 1;
 `;

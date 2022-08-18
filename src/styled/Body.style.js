@@ -4,10 +4,12 @@ export const MainContainer = styled.div`
   /* display: block; */
   /* background-color: grey; */
   /* width: 100%; */
-  margin: auto;
+  margin-top: 50px;
   width: 60%;
   /* border: solid; */
   padding: 10px;
+  /* position: absolute; */
+  flex: auto;
 `;
 export const MainContainerWrapper = styled.div`
   margin: 0;
@@ -35,6 +37,7 @@ export const PostContainer = styled.div`
 `;
 
 export const PostHeading = styled.h1`
+  opacity: 70%;
   font-size: 25px;
   font-weight: bold;
   background-color: white;
@@ -44,8 +47,9 @@ export const PostHeading = styled.h1`
 `;
 
 export const PostContent = styled.div`
-  background-color: lightgrey;
+  background-color: white;
   margin-bottom: 3px;
+  opacity: 70%;
   /* padding: 3px; */
 `;
 
@@ -54,13 +58,14 @@ export const PostDescription = styled.p`
 `;
 
 export const FeedCapacity = styled.p`
-  font-size: 18px;
+  font-size: 20px;
+  opacity: 85%;
 `;
 
 export const FoodLocation = styled.p`
-  font-size: 18px;
+  font-size: 20px;
 `;
 
 export const ContactInfo = styled.p`
-  font-size: 18px;
+  font-size: 20px;
 `;
