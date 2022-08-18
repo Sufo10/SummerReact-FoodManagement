@@ -4,10 +4,12 @@ export const MainContainer = styled.div`
   /* display: block; */
   /* background-color: grey; */
   /* width: 100%; */
-  margin: auto;
+  margin-top: 50px;
   width: 60%;
   /* border: solid; */
   padding: 10px;
+  /* position: absolute; */
+  flex: auto;
 `;
 
 export const PostContainer = styled.div`
@@ -47,13 +49,14 @@ export const PostDescription = styled.p`
 `;
 
 export const FeedCapacity = styled.p`
-  font-size: 18px;
+  font-size: 20px;
+  opacity: 85%;
 `;
 
 export const FoodLocation = styled.p`
-  font-size: 18px;
+  font-size: 20px;
 `;
 
 export const ContactInfo = styled.p`
-  font-size: 18px;
+  font-size: 20px;
 `;

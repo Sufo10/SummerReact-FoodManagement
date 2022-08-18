@@ -44,8 +44,10 @@ export const OutNav = styled.div`
   display: flex;
   background-color: white;
   width: 100%;
-  /* height: 30px; */
-  margin: 0px;
+  /* height: auto; */
+  margin: auto;
   padding: 0px;
   overflow: auto;
+  position: fixed;
+  z-index: 1;
 `;
