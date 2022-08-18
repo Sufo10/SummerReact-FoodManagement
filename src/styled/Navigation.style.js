@@ -11,7 +11,9 @@ export const H1 = styled.h1`
 
 export const NavLink = styled(Link)`
   text-decoration: none;
+  color: black;
 `;
+
 // nav bar buttons
 export const Button = styled.button`
   text-decoration: none;

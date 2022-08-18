@@ -26,6 +26,7 @@ export const PostContainer = styled.div`
 `;
 
 export const PostHeading = styled.h1`
+  opacity: 70%;
   font-size: 25px;
   font-weight: bold;
   background-color: white;
@@ -35,8 +36,9 @@ export const PostHeading = styled.h1`
 `;
 
 export const PostContent = styled.div`
-  background-color: lightgrey;
+  background-color: white;
   margin-bottom: 3px;
+  opacity: 70%;
   /* padding: 3px; */
 `;
 
