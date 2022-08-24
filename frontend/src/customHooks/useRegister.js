@@ -8,7 +8,7 @@ const useRegister = () => {
   const register = async user => {
     try {
       setError({});
-      const response = await axios.post('register', user, {
+      const response = await axios.post('/auth/register', user, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -17,8 +17,9 @@ const useRegister = () => {
     } catch (err) {
       const errorObj = {};
       if (err.response) {
-        error.response.data.details.forEach(e => {
-          const key = e.message.split(' ').slice(1, -1);
+        console.log(err.response);
+        err.response.data.details.forEach(e => {
+          const key = e.message.split(' ')[0].slice(1, -1);
           errorObj[key] = e.message;
         });
       }

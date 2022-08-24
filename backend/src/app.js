@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const router = require('./routes/index.router');
 const { PORT, URI } = require('./config/config');
-const router = require('./routes/router');
 const dbConnection = require('./database/connection');
 
 const app = express();
