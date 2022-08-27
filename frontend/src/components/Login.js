@@ -11,6 +11,7 @@ const {
   P,
   A,
   LoginWrapper,
+  Error,
 } = FormComponents;
 
 function Login() {
@@ -35,6 +36,7 @@ function Login() {
             type='password'
             onChange={e => setPassword(e.target.value)}
           />
+          <Error></Error>
           <Button>Login</Button>
         </FormContainer>
         <P>

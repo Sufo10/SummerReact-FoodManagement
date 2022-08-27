@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import img from '../img/wefeed_background.jpg';
+import img from '../assets/img/wefeed_background.jpg';
 
 const Title = styled.h1`
   width: 100%;

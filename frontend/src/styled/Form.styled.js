@@ -15,6 +15,7 @@ const CommonContainer = styled.div`
   font-family: 'Poppins', sans-serif;
   border-radius: 10px;
 `;
+
 const LoginWrapper = styled.div`
   margin: 0;
   background-color: lightgray;
@@ -26,15 +27,14 @@ const LoginWrapper = styled.div`
 `;
 
 const FormContainer = styled.form`
-  width: 70%;
+  width: 75%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 `;
 
 const Input = styled.input`
-  width: 100%;
+  max-width: 100%;
   margin-bottom: 10px;
   padding: 10px;
   font-family: 'Poppins', sans-serif;
@@ -46,6 +46,7 @@ const Button = styled.button`
   width: 40%;
   padding: 8px;
   margin-top: 20px;
+  align-self: center;
   font-family: 'Poppins', sans-serif;
   background: #424341;
   color: #fff;
@@ -82,6 +83,14 @@ const A = styled(Link)`
   }
 `;
 
+const Error = styled.div`
+  align-content: center;
+  font-size: 0.75em;
+  color: red;
+  padding-bottom: 2px;
+  margin-top: -4px;
+`;
+
 export default {
   CommonContainer,
   FormContainer,
@@ -91,4 +100,5 @@ export default {
   P,
   A,
   LoginWrapper,
+  Error,
 };

@@ -1,7 +1,10 @@
+/* eslint-disable no-extra-boolean-cast */
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-useless-return */
 /* eslint-disable no-unused-expressions */
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import validate from '../helpers/validateInput';
 import useRegister from '../customHooks/useRegister';
 import RegisterFormComponents from '../styled/Register.styled';
 
@@ -10,12 +13,11 @@ const {
   H2,
   RFormContainer,
   Input,
-  Message,
   Btn,
   Paragraph,
   A,
   Error,
-  RegisterWrapper
+  RegisterWrapper,
 } = RegisterFormComponents;
 
 function Register() {
@@ -23,33 +25,49 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [conPass, setConPass] = useState('');
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState({
+    name: '',
+    email: '',
+    pass: '',
+    conP: '',
+  });
+  const [disable, setDisable] = useState(false);
   const { register, error } = useRegister();
   const navigate = useNavigate();
 
   const handleSubmit = async e => {
     e.preventDefault();
-    if (password === conPass) {
-      setMessage('');
-    } else {
-      setMessage('Confirm password must be same as password');
+    const validation = validate({ name, email, password, conPass });
+    if (Object.keys(validation).length !== 0) {
+      setMessage(validation);
       return;
-    };
+    }
     const user = { name, email, password };
     const res = await register(user);
-    console.log(res);
-    if (res.status === 200) navigate('/login');
+    if (res && res.status === 200) navigate('/login');
   };
 
-  const check = () => {
-    if (name.length >= 2) {
-      error.name = '';
+  const checkPassword = e => {
+    const pass = e.target.value;
+    setPassword(e.target.value);
+    if (pass.length < 8) {
+      setDisable(true);
+      setMessage({ pass: 'Password should be at least 8 characters' });
+    } else {
+      setDisable(false);
+      setMessage({ pass: '', conP: '' });
     }
-    if (password.length >= 7) {
-      error.password = '';
-    }
-    if (conPass.length === (password.length - 1)) {
-      setMessage('');
+  };
+
+  const checkConPassword = e => {
+    const confPass = e.target.value;
+    setConPass(e.target.value);
+    if (password !== confPass) {
+      setDisable(true);
+      setMessage({ conP: 'Confirm password must be same as password' });
+    } else {
+      setDisable(false);
+      setMessage({ pass: '', conP: '' });
     }
   };
 
@@ -62,38 +80,43 @@ function Register() {
             placeholder='Name'
             value={name}
             type='text'
-            onChange={e => {
-              setName(e.target.value);
-              check();
-            }}
+            onChange={e => setName(e.target.value)}
           />
-          <Error>{error.name}</Error>
+          {message.name ? (
+            <Error>{message.name}</Error>
+          ) : (
+            <Error>{error.name}</Error>
+          )}
+
           <Input
             placeholder='Email'
             value={email}
             type='email'
             onChange={e => setEmail(e.target.value)}
           />
-          {error.email && <Error>{error.email}</Error>}
+          {message.email ? (
+            <Error>{message.email}</Error>
+          ) : (
+            <Error>{error.email}</Error>
+          )}
+
           <Input
             placeholder='Password'
+            value={password}
             type='password'
-            onChange={e => {
-              setPassword(e.target.value);
-              check();
-            }}
+            onChange={checkPassword}
           />
-          <Error>{error.password}</Error>
+          <Error>{message.pass}</Error>
+
           <Input
             placeholder='Confirm Password'
+            value={conPass}
             type='password'
-            onChange={e => {
-              setConPass(e.target.value);
-              check();
-            }}
+            onChange={checkConPassword}
           />
-          <Message>{message}</Message>
-          <Btn>Register</Btn>
+          <Error>{message.conP}</Error>
+
+          <Btn disabled={disable}>Register</Btn>
         </RFormContainer>
         <Paragraph>
           Already Registered! <A to='/login'>Log In!</A>

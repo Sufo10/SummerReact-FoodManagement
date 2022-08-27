@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import FormComponents from './Form.styled';
 
-const { CommonContainer, FormContainer, Heading2, Input, Button, P, A } =
+const { CommonContainer, FormContainer, Heading2, Input, Button, P, A, Error } =
   FormComponents;
 
 const RFormContainer = styled(FormContainer)`
@@ -22,18 +22,10 @@ const Btn = styled(Button)`
 
 const Message = styled.p`
   font-family: 'Poppins', sans-serif;
-  font-size: 0.8em;
+  font-size: 0.75em;
   color: red;
   margin-bottom: -2px;
   margin-top: 2px;
-`;
-
-const Error = styled.div`
-  align-items: center;
-  font-size: 0.75em;
-  color: red;
-  margin-bottom: 4px;
-  padding-bottom: 2px;
 `;
 
 const RegisterWrapper = styled.div`
@@ -56,5 +48,5 @@ export default {
   Input,
   A,
   Error,
-  RegisterWrapper
+  RegisterWrapper,
 };
