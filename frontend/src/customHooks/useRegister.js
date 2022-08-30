@@ -8,19 +8,16 @@ const useRegister = () => {
   const register = async user => {
     try {
       setError({});
-      const response = await axios.post('register', user, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const response = await axios.post('http://localhost:4000/register', user);
       return response;
     } catch (err) {
       const errorObj = {};
       if (err.response) {
-        error.response.data.details.forEach(e => {
-          const key = e.message.split(' ').slice(1, -1);
-          errorObj[key] = e.message;
-        });
+        // err.response.data.details.forEach(e => {
+        //   const key = e.message.split(' ').slice(1, -1);
+        //   errorObj[key] = e.message;
+        // });
+        console.log(err.response.data.details);
       }
       setError(errorObj);
     }

@@ -13,7 +13,7 @@ const {
   Paragraph,
   A,
   Error,
-  RegisterWrapper
+  RegisterWrapper,
 } = RegisterFormComponents;
 
 function Register() {
@@ -34,14 +34,14 @@ function Register() {
     await register(user);
   };
 
-  const check = () => {
-    if (name.length >= 2) {
-      document.querySelector('#phone').innerHTML = '';
-    }
-    if (password.length >= 7) {
-      document.querySelector('#password').innerHTML = '';
-    }
-  };
+  // const check = () => {
+  //   if (name.length >= 2) {
+  //     document.querySelector('#phone').innerHTML = '';
+  //   }
+  //   if (password.length >= 7) {
+  //     document.querySelector('#password').innerHTML = '';
+  //   }
+  // };
 
   return (
     <RegisterWrapper>
@@ -54,10 +54,9 @@ function Register() {
             type='text'
             onChange={e => {
               setName(e.target.value);
-              check();
             }}
           />
-          <Error id="name">{error.name}</Error>
+          <Error id='name'>{error.name}</Error>
           <Input
             placeholder='Email'
             value={email}
@@ -69,10 +68,9 @@ function Register() {
             type='password'
             onChange={e => {
               setPassword(e.target.value);
-              check();
             }}
           />
-          <Error id="password">{error.password}</Error>
+          <Error id='password'>{error.password}</Error>
           <Input
             placeholder='Confirm Password'
             type='password'
