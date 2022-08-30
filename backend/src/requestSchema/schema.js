@@ -12,4 +12,11 @@ const userSchema = {
     }),
 };
 
-module.exports = userSchema;
+const postsSchema = Joi.object({
+    name: Joi.string().required(),
+    title: Joi.string(),
+    phone: Joi.number(),
+    address: Joi.string()
+});
+
+module.exports = { userSchema, postsSchema };

@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const userSchema = require('../requestSchema/schema');
+const { userSchema } = require('../requestSchema/schema');
 const validateRequestBody = require('../middlewares/validateReqBody');
 const { register, login } = require('../controllers/UserController');
 
