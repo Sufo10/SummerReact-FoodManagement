@@ -23,6 +23,7 @@ export const MainContainerWrapper = styled.div`
 
 export const PostContainer = styled.div`
   /* display: flex; */
+  font-family: Arial, Helvetica, sans-serif;
   border-radius: 10px;
   background-color: white;
   margin: 5px;
@@ -37,7 +38,7 @@ export const PostContainer = styled.div`
 `;
 
 export const PostHeading = styled.h1`
-  opacity: 70%;
+  opacity: 85%;
   font-size: 25px;
   font-weight: bold;
   background-color: white;
@@ -49,7 +50,7 @@ export const PostHeading = styled.h1`
 export const PostContent = styled.div`
   background-color: white;
   margin-bottom: 3px;
-  opacity: 70%;
+  /* opacity: 70%; */
   /* padding: 3px; */
 `;
 
@@ -59,7 +60,7 @@ export const PostDescription = styled.p`
 
 export const FeedCapacity = styled.p`
   font-size: 20px;
-  opacity: 85%;
+  /* opacity: 85%; */
 `;
 
 export const FoodLocation = styled.p`

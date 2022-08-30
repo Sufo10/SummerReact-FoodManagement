@@ -34,14 +34,13 @@ function Register() {
     } else {
       setMessage('Confirm password must be same as password');
       return;
-    };
+    }
     const user = { name, email, password };
     const res = await register(user);
     console.log(res);
     if (res.status === 200) navigate('/login');
   };
 
-<<<<<<< HEAD
   // const check = () => {
   //   if (name.length >= 2) {
   //     document.querySelector('#phone').innerHTML = '';
@@ -50,7 +49,7 @@ function Register() {
   //     document.querySelector('#password').innerHTML = '';
   //   }
   // };
-=======
+
   const check = () => {
     if (name.length >= 2) {
       error.name = '';
@@ -58,11 +57,10 @@ function Register() {
     if (password.length >= 7) {
       error.password = '';
     }
-    if (conPass.length === (password.length - 1)) {
+    if (conPass.length === password.length - 1) {
       setMessage('');
     }
   };
->>>>>>> 662c4b2565efcfa1bcb128a66f04c27587bcc115
 
   return (
     <RegisterWrapper>
@@ -77,11 +75,9 @@ function Register() {
               setName(e.target.value);
             }}
           />
-<<<<<<< HEAD
           <Error id='name'>{error.name}</Error>
-=======
+
           <Error>{error.name}</Error>
->>>>>>> 662c4b2565efcfa1bcb128a66f04c27587bcc115
           <Input
             placeholder='Email'
             value={email}
@@ -96,11 +92,8 @@ function Register() {
               setPassword(e.target.value);
             }}
           />
-<<<<<<< HEAD
           <Error id='password'>{error.password}</Error>
-=======
           <Error>{error.password}</Error>
->>>>>>> 662c4b2565efcfa1bcb128a66f04c27587bcc115
           <Input
             placeholder='Confirm Password'
             type='password'
