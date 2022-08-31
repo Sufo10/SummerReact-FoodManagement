@@ -6,27 +6,33 @@ export const H1 = styled.h1`
   margin: 5px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 25px;
+  color: rgb(47, 79, 79);
   flex: 90%;
+
+  @media (max-width: 425px) {
+    display: none;
+    flex: 0%;
+  }
 `;
 
 export const NavLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  /* color: black; */
+  color: rgb(47, 79, 79);
 `;
 
 // nav bar buttons
 export const Button = styled.button`
   text-decoration: none;
-  /* padding: 0.1rem 3rem; */
   background-color: white;
   border: none;
-  /* font-size: 1.5rem; */
   font-size: 20px;
   font-weight: bold;
-  /* border-radius: 0.4rem; */
   flex: 10%;
-  /* margin: 5px; */
-  /* width: 10px; */
+
+  @media (max-width: 425px) {
+    flex: 100%;
+  }
 `;
 
 // navigation bar container
@@ -37,6 +43,12 @@ export const Nav = styled.div`
   /* height: 30px; */
   margin: auto;
   overflow: auto;
+
+  /* @media (max-width: 425px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 16px;
+  } */
 `;
 
 // navigation outer container
@@ -44,7 +56,6 @@ export const OutNav = styled.div`
   display: flex;
   background-color: white;
   width: 100%;
-  /* height: auto; */
   margin: auto;
   padding: 0px;
   overflow: auto;

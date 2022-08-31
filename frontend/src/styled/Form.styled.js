@@ -10,11 +10,12 @@ const CommonContainer = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #eee;
-  position: relative;
+  /* position: relative; */
   color: #424341;
   font-family: 'Poppins', sans-serif;
   border-radius: 10px;
 `;
+
 const LoginWrapper = styled.div`
   margin: 0;
   background-color: lightgray;
@@ -23,6 +24,12 @@ const LoginWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 425px) {
+    margin-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 `;
 
 const FormContainer = styled.form`
