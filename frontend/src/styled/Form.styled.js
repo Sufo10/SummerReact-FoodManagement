@@ -14,8 +14,13 @@ const CommonContainer = styled.div`
   color: #424341;
   font-family: 'Poppins', sans-serif;
   border-radius: 10px;
+
+  @media (max-width: 425px) {
+    width: 345px;
+  }
 `;
-const LoginWrapper = styled.div`
+
+const CardWrapper = styled.div`
   margin: 0;
   background-color: lightgray;
   min-height: 100vh;
@@ -31,6 +36,10 @@ const FormContainer = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 425px) {
+    width: 95%;
+  }
 `;
 
 const Input = styled.input`
@@ -40,6 +49,10 @@ const Input = styled.input`
   font-family: 'Poppins', sans-serif;
   border: 1px solid #eee;
   border-radius: 8px;
+
+  @media (max-width: 425px) {
+    width: 95%;
+  }
 `;
 
 const Button = styled.button`
@@ -82,6 +95,14 @@ const A = styled(Link)`
   }
 `;
 
+const Error = styled.div`
+  align-content: center;
+  font-size: 0.75em;
+  color: red;
+  padding-bottom: 2px;
+  margin-top: -4px;
+`;
+
 export default {
   CommonContainer,
   FormContainer,
@@ -90,5 +111,6 @@ export default {
   Button,
   P,
   A,
-  LoginWrapper,
+  CardWrapper,
+  Error,
 };

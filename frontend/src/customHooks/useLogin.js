@@ -2,19 +2,19 @@
 import { useState } from 'react';
 import axios from '../service/axiosInstance';
 
-const useRegister = () => {
+const useLogin = () => {
   const [error, setError] = useState({});
 
-  const register = async user => {
+  const login = async user => {
     try {
       setError({});
-      const response = await axios.post('auth/register', user);
+      const response = await axios.post('auth/login', user);
       return response;
     } catch (err) {
       setError(err);
     }
   };
-  return { register, error };
+  return { login, error };
 };
 
-export default useRegister;
+export default useLogin;
