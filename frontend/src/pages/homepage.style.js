@@ -46,6 +46,10 @@ const Paragraph = styled.p`
 const RightColmn = styled.div`
   padding-left: 350px;
 
+  @media (min-width: 1300px) {
+    padding-left: 450px;
+  }
+
   @media (max-width: 600px) {
     padding-left: 10px;
   }
