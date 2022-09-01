@@ -1,9 +1,12 @@
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
+import useLogout from '../customHooks/useLogout';
 import { OutNav, Nav, H1, Button, NavLink } from '../styled/Navigation.style';
-// ex: style for heading imported
-// import { Heding } from '../styled-components/Navigation.style'
 
-// a demo/template component where code for the navigation bar will be written
 const NavBar = () => {
+  const { token } = useContext(UserContext);
+  const { logout } = useLogout();
+
   return (
     <OutNav>
       <Nav>
@@ -16,12 +19,25 @@ const NavBar = () => {
         <Button>
           <NavLink to='/food'>Food</NavLink>
         </Button>
-        <Button>
-          <NavLink to='/login'>Login</NavLink>
-        </Button>
-        <Button>
-          <NavLink to='/register'>Register</NavLink>
-        </Button>
+        {token && (
+          <>
+            <Button>
+              <NavLink onClick={logout} to='/'>
+                Logout
+              </NavLink>
+            </Button>
+          </>
+        )}
+        {!token && (
+          <>
+            <Button>
+              <NavLink to='/login'>Login</NavLink>
+            </Button>
+            <Button>
+              <NavLink to='/register'>Register</NavLink>
+            </Button>
+          </>
+        )}
       </Nav>
     </OutNav>
   );

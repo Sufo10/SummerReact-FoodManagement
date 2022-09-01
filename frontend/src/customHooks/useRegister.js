@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 import { useState } from 'react';
-import axios from 'axios';
+import axios from '../service/axiosInstance';
 
 const useRegister = () => {
   const [error, setError] = useState({});
@@ -8,27 +8,10 @@ const useRegister = () => {
   const register = async user => {
     try {
       setError({});
-      const response = await axios.post('/auth/register', user, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const response = await axios.post('auth/register', user);
       return response;
     } catch (err) {
-      const errorObj = {};
-      if (err.response) {
-        // err.response.data.details.forEach(e => {
-        //   const key = e.message.split(' ').slice(1, -1);
-        //   errorObj[key] = e.message;
-        // });
-        console.log(err.response.data.details);
-        console.log(err.response);
-        err.response.data.details.forEach(e => {
-          const key = e.message.split(' ')[0].slice(1, -1);
-          errorObj[key] = e.message;
-        });
-      }
-      setError(errorObj);
+      setError(err);
     }
   };
   return { register, error };

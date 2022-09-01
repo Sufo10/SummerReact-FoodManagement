@@ -89,6 +89,14 @@ const A = styled(Link)`
   }
 `;
 
+const Error = styled.div`
+  align-content: center;
+  font-size: 0.75em;
+  color: red;
+  padding-bottom: 2px;
+  margin-top: -4px;
+`;
+
 export default {
   CommonContainer,
   FormContainer,
@@ -98,4 +106,5 @@ export default {
   P,
   A,
   LoginWrapper,
+  Error,
 };
