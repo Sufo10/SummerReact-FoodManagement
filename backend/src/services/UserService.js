@@ -1,6 +1,6 @@
 const User = require('../database/schemas/userSchema');
 
-const createUser = async (payload) => {
+const createUser = async payload => {
   try {
     const user = await User.create(payload);
     return user;
@@ -9,7 +9,7 @@ const createUser = async (payload) => {
   }
 };
 
-const getUser = async (email) => {
+const getUser = async email => {
   try {
     const user = await User.findOne({ email });
     return user;
@@ -17,8 +17,6 @@ const getUser = async (email) => {
     console.log(error);
   }
 };
-
-console.log(getUser(''));
 
 const getAllUsers = async () => {
   try {

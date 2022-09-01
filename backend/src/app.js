@@ -13,10 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', router);
 
 async function setup() {
-    await dbConnection(URI);
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    });
+  dbConnection(URI);
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
 }
 setup();
-
