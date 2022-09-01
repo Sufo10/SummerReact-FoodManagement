@@ -17,7 +17,7 @@ const {
   Paragraph,
   A,
   Error,
-  RegisterWrapper,
+  CardWrapper,
 } = RegisterFormComponents;
 
 function Register() {
@@ -72,7 +72,7 @@ function Register() {
   };
 
   return (
-    <RegisterWrapper>
+    <CardWrapper>
       <CommonContainer>
         <H2>Register in WeFeed</H2>
         <RFormContainer onSubmit={handleSubmit}>
@@ -122,7 +122,7 @@ function Register() {
           Already Registered! <A to='/login'>Log In!</A>
         </Paragraph>
       </CommonContainer>
-    </RegisterWrapper>
+    </CardWrapper>
   );
 }
 

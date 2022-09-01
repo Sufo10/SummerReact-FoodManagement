@@ -14,7 +14,7 @@ const {
   Button,
   P,
   A,
-  LoginWrapper,
+  CardWrapper,
   Error,
 } = FormComponents;
 
@@ -63,7 +63,7 @@ function Login() {
   };
 
   return (
-    <LoginWrapper>
+    <CardWrapper>
       <CommonContainer>
         <Heading2>Login to WeFeed</Heading2>
         <FormContainer onSubmit={handleSubmit}>
@@ -95,7 +95,7 @@ function Login() {
           Havenot Registered Yet! <A to='/register'>Register Now!</A>
         </P>
       </CommonContainer>
-    </LoginWrapper>
+    </CardWrapper>
   );
 }
 

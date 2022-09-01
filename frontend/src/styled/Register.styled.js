@@ -1,8 +1,16 @@
 import styled from 'styled-components';
 import FormComponents from './Form.styled';
 
-const { CommonContainer, FormContainer, Heading2, Input, Button, P, A } =
-  FormComponents;
+const {
+  CommonContainer,
+  FormContainer,
+  Heading2,
+  Input,
+  Button,
+  P,
+  A,
+  CardWrapper,
+} = FormComponents;
 
 const RFormContainer = styled(FormContainer)`
   margin-top: 25px;
@@ -36,15 +44,15 @@ const Error = styled.div`
   padding-bottom: 2px;
 `;
 
-const RegisterWrapper = styled.div`
-  margin: 0;
-  background-color: lightgray;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+// const RegisterWrapper = styled.div`
+//   margin: 0;
+//   background-color: lightgray;
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+// `;
 
 export default {
   CommonContainer,
@@ -56,5 +64,5 @@ export default {
   Input,
   A,
   Error,
-  RegisterWrapper
+  CardWrapper,
 };
